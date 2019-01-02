@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-    <%@ page import="java.util.*"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page import="java.util.*"%>
+<%@ page import="java.text.SimpleDateFormat"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -24,7 +24,7 @@
 	<img src="pic2.jpg" style="margin:90px 30px;" />
 	<div id="login">
 		<div>
-			<form action="reader.jsp" method="post"><!-- 用什么方法在考虑考虑 -->
+			<form action="reader.jsp" method="get">
 				<span style="margin-top:50px;font-size:20px;font-family:微软雅黑;color:#822727;">读者入口：</span>
 				<input type="submit" value="读者登录" class="button" style="margin-left:20px;" />
 			</form>
@@ -36,10 +36,12 @@
 			</form>
 		</div>
 	</div>
-	<div style="margin-top:-100px;margin-left:300px;font-family:微软雅黑;color:#822727;">
-		<p>当前系统时间: <%= (new java.util.Date()).toLocaleString()%></p>
+	<div style="margin-top:-120px;margin-left:360px;font-family:微软雅黑;color:#822727;">
+		<% SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");//设置日期格式 %>
+		<p>当前系统时间: <%= df.format(new Date()) %></p>
+		<p><span style="margin-left:-100px;">Copyright 2018 Construct&nbsp;&nbsp;|</span>&nbsp;&nbsp;版权所有:信息162许致立</p>
 	</div>
-
+	
 </div>
 
 </body>
